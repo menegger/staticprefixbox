@@ -68,8 +68,13 @@
 			
 			$('#ex1').slider({
 				formatter: function(value) {
-					return 'Current value: ' + value;
+					return value + ' EUR';
 				}
+			});
+			
+			$('#ex1').slider().on("slideStop", function()
+			{
+				Prefixbox.boxes[2].sendRequest();
 			});
 		</script>
 

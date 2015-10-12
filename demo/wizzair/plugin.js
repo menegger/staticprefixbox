@@ -35,12 +35,21 @@ function renderResult(response)
 		
 		tableElement.appendChild(trElement);
 		// render suggestions
-		for (var i = 0; i < sl.length; i++) {
+		
+		var renderedNumber = 0;
+		for (var i = 0; i < sl.length && renderedNumber < 8; i++) {
 			var sug = sl[i];
+			var sugJson = JSON.parse(sug.Payload.substring(0, sug.Payload.length - 1));
+			if(sugJson.Price > $("#ex1").val())
+			{
+				continue;
+			}
+			renderedNumber++;
+			
 			trElement = document.createElement('tr');
 			var tdElement = document.createElement('td');
 			
-			var sugJson = JSON.parse(sug.Payload.substring(0, sug.Payload.length - 1));
+			
 			
 			tdElement.innerHTML = sugJson.DepartureCity;
 			trElement.appendChild(tdElement);
@@ -779,7 +788,8 @@ function renderResult(response)
             },
 
             _setCurrentValue: function () {
-                this._setInputValue(this.sl[this._getSlPos() - 1].Text);
+                //this._setInputValue(this.sl[this._getSlPos() - 1]);
+				this._setInputValue(this.sl[this._getSlPos() - 1 ].DisplayText.replace("<b>","").replace("</b>",""));
             },
 
             _setInputValue: function (val) {
@@ -946,8 +956,8 @@ function renderResult(response)
                 if (this.isPrefixbox() || this.isStandalone()) {
                     this.goToUrl(pos);
                 } else if (this.isDropdown()) {
-                    if (this._getSuggestionText(pos)) {
-                        this._setInputValue(this._getSuggestionText(pos));
+                    if (this._getDisplayText(pos)) {
+                        this._setInputValue(this._getDisplayText(pos));
                     }
                 }
             },
@@ -977,7 +987,14 @@ function renderResult(response)
 
                 return url;
             },
-
+			
+			_getDisplayText: function (pos) {
+                if (pos && pos > 0) {
+                    return this.sl[pos - 1].DisplayText.replace("<b>","").replace("</b>","");
+                }
+                return "";
+            },
+			
             _getSuggestionText: function (pos) {
                 if (pos && pos > 0) {
                     return this.sl[pos - 1].Text;
