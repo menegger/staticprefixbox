@@ -139,14 +139,18 @@
 				{
 					Prefixbox.boxes[2].sendRequest();
 				});
+				
+				$('#datetimepicker').data("DateTimePicker").showClear(true);
 			});
+			
+			
 			
 			$('#ex1').slider({
 				formatter: function(value) {
 					return 'Current value: ' + value;
 				}
 			});
-
+			
             $('#ex1').slider().on("slideStop", function()
             {
                 Prefixbox.boxes[2].sendRequest();
