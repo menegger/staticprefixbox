@@ -789,7 +789,7 @@ function renderResult(response)
 
             _setCurrentValue: function () {
                 //this._setInputValue(this.sl[this._getSlPos() - 1]);
-				this._setInputValue(this.sl[this._getSlPos() - 1 ].DisplayText.replace("<b>","").replace("</b>",""));
+				this._setInputValue(this.sl[this._getSlPos() - 1 ].DisplayText.replace(/<b>/g,"").replace(/<\/b>/g,""));
             },
 
             _setInputValue: function (val) {
@@ -990,7 +990,7 @@ function renderResult(response)
 			
 			_getDisplayText: function (pos) {
                 if (pos && pos > 0) {
-                    return this.sl[pos - 1].DisplayText.replace("<b>","").replace("</b>","");
+                    return this.sl[pos - 1].DisplayText.replace(/<b>/g,"").replace(/<\/b>/g,"");
                 }
                 return "";
             },
