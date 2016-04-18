@@ -3,6 +3,12 @@
 <head>
     <title></title>
     <script src="//testscript.prefixbox.com/plugin.js?btr=7add8bdf-bb49-4bd5-8568-f22a0729ac60"></script>
+	<script>
+		window.addEventListener('load', function()
+		{
+			document.getElementById('experimentDetails').innerHTML = 'Experiment :' + Prefixbox.experiment + '<br />' + 'Variant: ' + Prefixbox.variant + '<br />'; 
+		});
+	</script>
 </head>
 <body style="background-color: #aaaaaa">
     Box 1
@@ -13,12 +19,14 @@
     <hr />
 
 	
-	Experiment status: <script>document.write(Prefixbox.experiment)</script><br />
-	You are on <script>document.write(Prefixbox.variant)</script> <br />
+	<input type="button" onclick="" />
+	<div id="experimentDetails">
+	</div>
 	
 	
-	Query: <input id = "resultFoundQuery"/> Count: <input id = "resultFoundCount" /><input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultFoundQuery').value, Document.getElementById('resultFoundCount').value , 1);" /><br />
-	Query: <input id = "resultNotFoundQuery"/><input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultNotFoundQuery').value, 0);" /><br />
+	Query: <input id = "resultFoundQuery"/> Count: <input id = "resultFoundCount" /><input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(document.getElementById('resultFoundQuery').value, document.getElementById('resultFoundCount').value , 1);" /><br />
+	Query: <input id = "resultNotFoundQuery"/><input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(document.getElementById('resultNotFoundQuery').value, 0);" /><br />
+	Query: <input id = "resultClickedQuery" />Position: <input id = "resultClickedPosition" />Title: <input id="resultClickedTitle" /> Url: <input id = "resultClickedUrl" /> <input type = "button" onclick="Prefixbox.resultClicked(document.getElementById('resultClickedQuery').value, document.getElementById('resultClickedCount').value, document.getElementById('resultClickedTitle').value, document.getElementById('resultClickedUrl').value);"/>
 	
 </body>
 </html>
