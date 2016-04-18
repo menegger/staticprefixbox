@@ -13,12 +13,12 @@
     <hr />
 
 	
-	Experiment status: <script>Prefixbox.experiment</script><br />
-	You are on <script>Prefixbox.variant</script> <br />
+	Experiment status: <script>document.write(Prefixbox.experiment)</script><br />
+	You are on <script>document.write(Prefixbox.variant)</script> <br />
 	
 	
-	Query: <input id = "resultFoundQuery"/> Count: <input id = "resultFoundCount" /><input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultFoundQuery').value, Document.getElementById('resultFoundCount').value , 1);" />
-	Query: <input id = "resultNotFoundQuery"/><input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultNotFoundQuery').value, 0);" />
+	Query: <input id = "resultFoundQuery"/> Count: <input id = "resultFoundCount" /><input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultFoundQuery').value, Document.getElementById('resultFoundCount').value , 1);" /><br />
+	Query: <input id = "resultNotFoundQuery"/><input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(Document.getElementById('resultNotFoundQuery').value, 0);" /><br />
 	
 </body>
 </html>
