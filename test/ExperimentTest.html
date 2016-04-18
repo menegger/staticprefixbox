@@ -19,14 +19,25 @@
     <hr />
 
 	
-	<input type="button" onclick="" />
 	<div id="experimentDetails">
 	</div>
 	
 	
-	Query: <input id = "resultFoundQuery"/> Count: <input id = "resultFoundCount" /><input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(document.getElementById('resultFoundQuery').value, document.getElementById('resultFoundCount').value , 1);" /><br />
-	Query: <input id = "resultNotFoundQuery"/><input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(document.getElementById('resultNotFoundQuery').value, 0);" /><br />
-	Query: <input id = "resultClickedQuery" />Position: <input id = "resultClickedPosition" />Title: <input id="resultClickedTitle" /> Url: <input id = "resultClickedUrl" /> <input type = "button" onclick="Prefixbox.resultClicked(document.getElementById('resultClickedQuery').value, document.getElementById('resultClickedCount').value, document.getElementById('resultClickedTitle').value, document.getElementById('resultClickedUrl').value);"/>
+	Query: <input id = "resultFoundQuery"/> 
+	Count: <input id = "resultFoundCount" />
+	<input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(document.getElementById('resultFoundQuery').value, document.getElementById('resultFoundCount').value , 1);" />
+	<br />
+	
+	Query: <input id = "resultNotFoundQuery"/>
+	<input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(document.getElementById('resultNotFoundQuery').value, 0);" />
+	<br />
+	
+	Query: <input id = "resultClickedQuery" />
+	Position: <input id = "resultClickedCount" />
+	Title: <input id="resultClickedTitle" /> 
+	Url: <input id = "resultClickedUrl" /> 
+	<input type = "button" onclick="Prefixbox.resultClicked(document.getElementById('resultClickedQuery').value, document.getElementById('resultClickedCount').value, document.getElementById('resultClickedTitle').value, document.getElementById('resultClickedUrl').value);" value = "Result Clicked"/>
+	<br />
 	
 </body>
 </html>
