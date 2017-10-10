@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="//testscript.prefixbox.com/plugin.js?btr=98bd7eda-60cb-41d5-abd1-3516eece2fc5&btr=4afad8fb-aac6-4f51-9859-242044532b12"></script>
+	<script>
+		window.addEventListener('load', function()
+		{
+			document.getElementById('experimentDetails').innerHTML = 'Experiment :' + Prefixbox.experiment + '<br />' + 'Variant: ' + Prefixbox.variant + '<br />'; 
+		});
+	</script>
+</head>
+<body style="background-color: #aaaaaa">
+    Box 1
+
+    <input id="box1" name="box1" />
+	<input id="box2" name="box2" />
+
+    <hr />
+
+	
+	<div id="experimentDetails">
+	</div>
+	
+	
+	Query: <input id = "resultFoundQuery"/> 
+	Count: <input id = "resultFoundCount" />
+	<input type = "button"  value = "Result Found" onclick = "Prefixbox.resultFound(document.getElementById('resultFoundQuery').value, document.getElementById('resultFoundCount').value , 1);" />
+	<br />
+	
+	Query: <input id = "resultNotFoundQuery"/>
+	<input type = "button"  value = "Result Not Found" onclick = "Prefixbox.resultFound(document.getElementById('resultNotFoundQuery').value, 0);" />
+	<br />
+	
+	Query: <input id = "resultClickedQuery" />
+	Position: <input id = "resultClickedCount" />
+	Title: <input id="resultClickedTitle" /> 
+	Url: <input id = "resultClickedUrl" /> 
+	<input type = "button" onclick="Prefixbox.resultClicked(document.getElementById('resultClickedQuery').value, document.getElementById('resultClickedCount').value, document.getElementById('resultClickedTitle').value, document.getElementById('resultClickedUrl').value);" value = "Result Clicked"/>
+	<br />
+	
+</body>
+</html>
